@@ -67,6 +67,10 @@ package main
 import "fmt"
 
 func main() {
+    helloWorld()
+}
+
+func helloWorld() {
     fmt.Println("ハローワールド")
 }
 ```
@@ -77,8 +81,8 @@ Shortcode で吹き出しを作ってみました。
 
 Markdown を入れ子にすることができます。
 
-### 見出し(h3)
 #### 見出し(h4)
+##### 見出し(h5)
 
 - リスト1
   - リスト1.1

@@ -64,7 +64,11 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println("hello world")
+    helloWorld()
+}
+
+func helloWorld() {
+    fmt.Println("Hello World")
 }
 ```
 
@@ -73,8 +77,8 @@ func main() {
 I created speech bubbles system with short code. 
 I can write markdown contents in it.
 
-### Heading(h3)
 #### Heading(h4)
+##### Heading(h5)
 
 - List 1
   - List 1.1

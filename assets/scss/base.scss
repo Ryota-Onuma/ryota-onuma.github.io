@@ -4,23 +4,23 @@
  * Licensed under the MIT License.
  */
 
-@import "reset";
-@import "variables";
-@import "layout";
-@import "articles";
-@import "terms";
+@import 'reset';
+@import 'variables';
+@import 'layout';
+@import 'articles';
+@import 'terms';
 
-@import "component/site-header";
-@import "component/site-footer";
-@import "component/article";
-@import "component/sidebar";
-@import "component/toc";
-@import "component/fukidashi";
-@import "component/alert";
+@import 'component/site-header';
+@import 'component/site-footer';
+@import 'component/article';
+@import 'component/sidebar';
+@import 'component/toc';
+@import 'component/fukidashi';
+@import 'component/alert';
 
-@import "component/button";
-@import "component/dropdown";
-@import "component/chroma";
+@import 'component/button';
+@import 'component/dropdown';
+@import 'component/chroma';
 
 body {
   font-family: var(--font-family);
@@ -29,8 +29,8 @@ body {
 }
 
 * {
-  font-family: "M PLUS Rounded 1c", sans-serif !important;
-  font-family: "Noto Sans JP", sans-serif !important;
+  font-family: 'M PLUS Rounded 1c', sans-serif !important;
+  font-family: 'Noto Sans JP', sans-serif !important;
 }
 
 del {
@@ -51,11 +51,11 @@ summary::-webkit-details-marker {
 summary:before {
   position: absolute;
   left: -20px;
-  content: "▶" !important;
+  content: '▶' !important;
 }
 details[open] summary:before,
 summary details[open] summary:before {
-  content: "▼" !important;
+  content: '▼' !important;
 }
 
 details {

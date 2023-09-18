@@ -22,7 +22,9 @@ body {
 
 #site-main-content-wrapper {
   display: flex;
-  flex: 1;
+  justify-content: center;
+  width: 100%;
+  min-height: calc(100vh - 120px); // headerの高さ分だけ下にずらす
 }
 
 #sidebar,
@@ -36,28 +38,12 @@ body {
 main {
   flex: 1;
   display: flex;
-  overflow: auto;
-}
-
-#article {
-  flex: 1;
-  width: 100vw;
+  // overflow: auto;
 }
 
 #sidebar {
   width: 85%;
   left: -85%;
-}
-
-#toc {
-  width: 85%;
-  right: -85%;
-  .sticky {
-    strong {
-      display: flex;
-      align-items: flex-end;
-    }
-  }
 }
 
 /* Small Tablet */
@@ -70,11 +56,6 @@ main {
   #sidebar {
     width: 50%;
     left: -50%;
-  }
-
-  #toc {
-    width: 50%;
-    right: -50%;
   }
 }
 
@@ -116,26 +97,6 @@ main {
     width: 33%;
     left: -33%;
   }
-
-  #article {
-    width: 75vw;
-  }
-
-  #toc {
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  #toc .sticky {
-    position: fixed;
-    right: 0;
-    width: 20%;
-    strong {
-      display: flex;
-      align-items: flex-end;
-    }
-  }
 }
 
 /* From Desktop */
@@ -145,47 +106,10 @@ main {
     display: flex;
     flex-direction: column;
   }
-
-  #article {
-    width: 60vw;
-  }
-
-  #toc {
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  #toc .sticky {
-    position: fixed;
-    right: 0;
-    width: 20%;
-    strong {
-      display: flex;
-      align-items: flex-end;
-    }
-  }
 }
 
 /* Upto Large Tablet */
 @media (max-width: 1023px) {
-  #toc {
-    position: fixed;
-    top: 0;
-    height: 100%;
-    transition: 0.3s;
-    z-index: 300;
-    overflow-x: auto;
-    background: var(--background);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-  }
-
-  :root[data-color="dark"] #toc,
-  :root[data-color="night"] #toc {
-    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
-  }
-
   .offcanvas-toc-on #toc {
     animation: slide-in-right 0.3s forwards;
     display: flex;
@@ -227,8 +151,8 @@ main {
     backdrop-filter: blur(5px);
   }
 
-  :root[data-color="dark"] #sidebar,
-  :root[data-color="night"] #sidebar {
+  :root[data-color='dark'] #sidebar,
+  :root[data-color='night'] #sidebar {
     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
   }
 

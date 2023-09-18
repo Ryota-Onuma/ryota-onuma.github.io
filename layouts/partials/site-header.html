@@ -69,7 +69,7 @@
           {{ $allTranslation := .AllTranslations}}
           {{ range $index, $value := .AllTranslations }}
             <span role="menuitem"><a href="{{ .Permalink }}">{{ $value.Language.LanguageName }}</a></span>
-            {{ if not (eq (add $index 1) (len $allTranslation)) }} / {{ end }}
+            {{ if not (eq (add $index 1) (len $allTranslation)) }}<span>|</span>{{ end }}
           {{ end }}
         {{ else }}
             <span role="menuitem" class="{{ if eq .Site.Language.Lang .Language.LanguageName}}active{{ end }}"><a href="#">{{ .Language.LanguageName }}</a></span>

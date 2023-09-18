@@ -1,10 +1,10 @@
-@import "../font/inter";
-@import "../icon/default";
+@import '../font/inter';
+@import '../icon/default';
 
 :root {
-  --font-family: "Inter", sans-serif;
-  --font-family-brand: "Times", serif;
-  --font-family-code: "Menlo", monospace;
+  --font-family: 'Inter', sans-serif;
+  --font-family-brand: 'Times', serif;
+  --font-family-code: 'Menlo', monospace;
 
   --background: #ffffff;
   --color: #000000;
@@ -39,7 +39,7 @@
   --chroma-base0F: #a3685a;
 }
 
-:root[data-color="dark"] {
+:root[data-color='dark'] {
   --background: #000000;
   --color: #fff;
   --color2: #e6d9b1;
@@ -49,11 +49,7 @@
   --background-fg2: #fff;
   --border-color: rgba(255, 255, 255, 0.4);
   --color-hover: #ffffffff;
-  --home-cover-background: linear-gradient(
-    135deg,
-    #000000 9.8%,
-    #000000 92.84%
-  );
+  --home-cover-background: linear-gradient(135deg, #000000 9.8%, #000000 92.84%);
 
   /* base16 tomorrow night */
   --chroma-base00: #333333;
@@ -74,7 +70,7 @@
   --chroma-base0F: #a3685a;
 }
 
-:root[data-color="night"] {
+:root[data-color='night'] {
   --background: #103551ff;
   --color: #ffffffff;
   --color2: #9fd5ee;
@@ -103,17 +99,14 @@
   --chroma-base0F: #9b703f;
 }
 
-:root[data-color="light"] .icon:not(.icon-colored) {
-  filter: invert(30%) sepia(24%) saturate(758%) hue-rotate(160deg)
-    brightness(89%) contrast(90%);
+:root[data-color='light'] .icon:not(.icon-colored) {
+  filter: invert(30%) sepia(24%) saturate(758%) hue-rotate(160deg) brightness(89%) contrast(90%);
 }
 
-:root[data-color="dark"] .icon:not(.icon-colored) {
-  filter: invert(97%) sepia(0%) saturate(3231%) hue-rotate(294deg)
-    brightness(118%) contrast(87%);
+:root[data-color='dark'] .icon:not(.icon-colored) {
+  filter: invert(97%) sepia(0%) saturate(3231%) hue-rotate(294deg) brightness(118%) contrast(87%);
 }
 
-:root[data-color="night"] .icon:not(.icon-colored) {
-  filter: invert(100%) sepia(2%) saturate(1090%) hue-rotate(294deg)
-    brightness(83%) contrast(92%);
+:root[data-color='night'] .icon:not(.icon-colored) {
+  filter: invert(100%) sepia(2%) saturate(1090%) hue-rotate(294deg) brightness(83%) contrast(92%);
 }
