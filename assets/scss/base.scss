@@ -1,0 +1,63 @@
+/*!
+ * Docura (https://docura.github.io/)
+ * Copyright 2022 Dumindu Madunuwan
+ * Licensed under the MIT License.
+ */
+
+@import "reset";
+@import "variables";
+@import "layout";
+@import "articles";
+@import "terms";
+
+@import "component/site-header";
+@import "component/site-footer";
+@import "component/article";
+@import "component/sidebar";
+@import "component/toc";
+@import "component/fukidashi";
+@import "component/alert";
+
+@import "component/button";
+@import "component/dropdown";
+@import "component/chroma";
+
+body{
+  font-family: var(--font-family);
+  background: var(--background);
+  color: var(--color);
+}
+
+*{
+  font-family: 'M PLUS Rounded 1c', sans-serif !important;
+  font-family: 'Noto Sans JP', sans-serif !important;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+summary {
+  display: inline-block;
+	list-style-type: none !important;
+  position: relative;
+  cursor: pointer;
+  margin-top: 50px;
+  margin-left: 20px !important;
+}
+summary::-webkit-details-marker {
+	display: none !important;
+}
+summary:before {
+  position: absolute;
+  left: -20px;
+	content: "▶" !important;
+}
+details[open] summary:before,
+summary details[open] summary:before {
+	content: "▼" !important; 
+}
+
+details{
+  margin-bottom: 50px;
+}

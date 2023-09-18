@@ -1,0 +1,20 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{ .Page.Params.description | default .Site.Params.description | markdownify }}">
+<meta name="author" content="{{ .Site.Params.author }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+
+<title>{{ .Site.Title }}</title>
+
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{ with .Params.robots -}}
+<meta name="robots" content="{{ . }}">
+{{- end }}
+
+{{ partial "stylesheets" . }}
+{{ partial "favicons" . }}
+{{ partial "analytics" . }}

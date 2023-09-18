@@ -1,0 +1,12 @@
+{{ $d := dict}}
+{{ range .}}
+  {{ range $i, $tag := .Params.tags }}
+      {{ $d = merge $d (dict $tag 0) }}
+  {{ end }}
+{{ end }}
+{{ range . }}
+  {{ range $i, $tag := .Params.tags }}
+      {{ $d = merge $d (dict $tag (add (index $d $tag) 1)) }}
+  {{ end }}
+{{ end }}
+{{ return $d }}

@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div id="site-main-content-wrapper">
+  <main>
+    <article id="article">
+      {{ partial "article-header" . }}
+      <div id="article-content">
+        {{ $content := .Content }}
+        {{ $content = replaceRE `<a href="(https?://.+)">` `<a href="$1" target="_blank">` $content | safeHTML }}
+        {{ $content | safeHTML }}
+      </div>
+    </article>
+    <div class="article-side-space">
+      {{ partial "toc" . }}
+    </div>
+  </main>
+</div>
+{{ end }}

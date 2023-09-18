@@ -1,0 +1,9 @@
+<aside id="toc">
+  <span class="btn-close"><i class="icon icon-close"></i></span>
+  <div class="sticky">
+    {{ if ne .TableOfContents "<nav id=\"TableOfContents\"></nav>" }}
+        <strong><i class="icon icon-toc"></i> {{ i18n "toc_title" }}</strong>
+        {{ .TableOfContents }}
+    {{ end }}
+  </div>
+</aside>

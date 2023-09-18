@@ -1,0 +1,42 @@
+<div class="codeblock-container">
+    {{- $name := .Attributes.name -}}
+    {{ with $name }}
+        <div class="codeblock-name">
+            {{ . }}
+        </div>
+    {{ end }}
+    <div class="codeblock-content">
+      {{- highlight (.Inner | safeHTML) .Type .Options }}
+    </div>
+</div>
+<style>
+    .codeblock-container {
+        margin-top: 2rem !important;
+    }
+
+    .codeblock-name {
+        width: fit-content;
+        margin-top: 1rem;
+        padding: 0.3rem 1.1rem;
+        color: white;
+        font-size: 1em;
+        background-color: #272822;
+        border-top-left-radius: 6px !important;
+        border-top-right-radius: 6px !important;
+    }
+
+    .codeblock-name + .codeblock-content > .highlight {
+        margin-top:0 !important;
+    }
+
+    .codeblock-name + .codeblock-content > .highlight > pre {
+        margin-top:0 !important;
+        border-top-left-radius: 0 !important;
+    }
+
+    .codeblock-name + .codeblock-content > .highlight > div > table > tbody > tr > td > pre {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+  
+</style>

@@ -1,0 +1,29 @@
+{{ $publishedAt := .Date.Format "2006-01-02" }}
+<header id="article-header">
+  <h1 class="article-title">{{ .Title | markdownify }}</h1>
+  <div id="article-metadata">
+    <div id="article-metadata-top">
+      <div id="article-published-at">
+        <i class="icon icon-calendar"></i>&nbsp;<time datetime="{{ $publishedAt }}">{{ $publishedAt }}</time>
+      </div>
+      {{ if .Draft }}
+        <div id="article-draft">
+          <i class="icon icon-pencil"></i>&nbsp;<span>Draft</span>
+        </div>
+      {{ end }}
+    </div>
+    <div id="article-metadata-bottom">
+      {{ if .Params.tags }}
+        {{ $urlPrefix := "" }}
+        {{ if eq .Site.Language.Lang "en" }}
+            {{ $urlPrefix = "/en" }}
+        {{ end }}
+        <div id="article-tags">
+          {{ range .Params.tags }}
+            <a href="{{ $urlPrefix }}{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag">#{{ . | urlize}}</a>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</header>
