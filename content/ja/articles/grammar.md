@@ -1,17 +1,22 @@
 ---
-title: "記法メモ"
+title: "マークダウン記法メモ"
 date: 2023-08-15T18:38:14+09:00
 draft: false
 tags: [Markdown]
 categories: [Programing]
 description: "本ブログで使える記法メモ"
 ---
+
+本ブログを書く上でのマークダウン記法のチートシートです。
+
+
 # 見出し(h1)
 ## 見出し(h2)
 ### 見出し(h3)
 #### 見出し(h4)
 ##### 見出し(h5)
 ###### 見出し(h6)
+
 
 - 箇条書き1
     - 箇条書きネスト1
@@ -45,7 +50,7 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println("hello world")
+    fmt.Println("ハローワールド")
 }
 ```
 {{< /details >}}
@@ -62,7 +67,7 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println("hello world")
+    fmt.Println("ハローワールド")
 }
 ```
 
