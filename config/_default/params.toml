@@ -1,0 +1,18 @@
+description = 'Welcome!!'
+
+author = 'Ryota Onuma'
+authorURL = 'https://onuma-ryota.com/'
+
+currentYear = 2023
+projectStartYear = 2023
+
+facebookURL = 'https://facebook.com/'
+twitterURL = 'https://www.twitter.com/'
+githubURL = 'https://github.com/Ryota-Onuma'
+
+[algolia]
+[algolia.en]
+container = '#site-header-search'
+appId = ''
+indexName = ''
+apiKey = ''

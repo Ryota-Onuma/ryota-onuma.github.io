@@ -1,0 +1,33 @@
+title = 'Ryota Onuma'
+baseURL = '/'
+
+languageCode = 'ja'
+defaultContentLanguage = 'ja'
+
+googleAnalytics = ''
+
+enableGitInfo = true
+enableEmoji = true
+theme = 'docura'
+contentDir = 'content'
+
+
+
+[markup]
+    defaultMarkdownHandler = "goldmark"
+    [markup.tableOfContents]
+        endLevel = 3
+        startLevel = 1
+    [markup.highlight]
+        noClasses = true
+        codeFences = true
+    [markup.goldmark]
+        [markup.goldmark.extensions]
+            strikethrough = true
+
+[params]
+    imageBasePath = '/images/'
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
