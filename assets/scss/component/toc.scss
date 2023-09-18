@@ -9,11 +9,11 @@
   gap: 3px;
   position: relative;
   left: -3px;
-  color: var(--color2)
+  color: var(--color2);
 }
 
 #toc ul {
-  margin-left: .3em;
+  margin-left: 0.3em;
   border-left: 1px solid var(--border-color);
 }
 
@@ -27,14 +27,15 @@
   color: var(--color3);
 }
 
-#toc ul a.active, #toc ul a:hover {
+#toc ul a.active,
+#toc ul a:hover {
   color: var(--color-hover);
   font-weight: 600;
   font-size: 98%;
 }
 
 #toc ul a::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 6px;
   height: 6px;
@@ -44,7 +45,7 @@
   top: -3px;
 }
 
-#toc ul a.active::before, #toc ul a:hover::before {
+#toc ul a.active::before,
+#toc ul a:hover::before {
   background: var(--color-hover);
 }
-

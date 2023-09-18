@@ -18,7 +18,6 @@ body {
   justify-content: center;
   align-items: center;
   padding: 16px;
-
 }
 
 #site-main-content-wrapper {
@@ -26,7 +25,11 @@ body {
   flex: 1;
 }
 
-#sidebar, #toc, #article-nav, #sidebar .btn-close, #toc .btn-close {
+#sidebar,
+#toc,
+#article-nav,
+#sidebar .btn-close,
+#toc .btn-close {
   display: none;
 }
 
@@ -51,7 +54,7 @@ main {
   right: -85%;
   .sticky {
     strong {
-      display: flex; 
+      display: flex;
       align-items: flex-end;
     }
   }
@@ -76,7 +79,6 @@ main {
 }
 
 @media (max-width: 1023px) {
-  
 }
 
 /* From Large Tablet */
@@ -130,7 +132,7 @@ main {
     right: 0;
     width: 20%;
     strong {
-      display: flex; 
+      display: flex;
       align-items: flex-end;
     }
   }
@@ -159,7 +161,7 @@ main {
     right: 0;
     width: 20%;
     strong {
-      display: flex; 
+      display: flex;
       align-items: flex-end;
     }
   }
@@ -171,7 +173,7 @@ main {
     position: fixed;
     top: 0;
     height: 100%;
-    transition: .3s;
+    transition: 0.3s;
     z-index: 300;
     overflow-x: auto;
     background: var(--background);
@@ -179,12 +181,13 @@ main {
     backdrop-filter: blur(5px);
   }
 
-  :root[data-color="dark"] #toc, :root[data-color="night"] #toc {
+  :root[data-color="dark"] #toc,
+  :root[data-color="night"] #toc {
     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
   }
 
   .offcanvas-toc-on #toc {
-    animation: slide-in-right .3s forwards;
+    animation: slide-in-right 0.3s forwards;
     display: flex;
     flex-direction: column;
     padding-left: 16px;
@@ -216,7 +219,7 @@ main {
     position: fixed;
     top: 0;
     height: 100%;
-    transition: .3s;
+    transition: 0.3s;
     z-index: 200;
     overflow-x: auto;
     background: var(--background);
@@ -224,12 +227,13 @@ main {
     backdrop-filter: blur(5px);
   }
 
-  :root[data-color="dark"] #sidebar, :root[data-color="night"] #sidebar {
+  :root[data-color="dark"] #sidebar,
+  :root[data-color="night"] #sidebar {
     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
   }
 
   .offcanvas-sidebar-on #sidebar {
-    animation: slide-in-left .3s forwards;
+    animation: slide-in-left 0.3s forwards;
     display: flex;
     flex-direction: column;
   }

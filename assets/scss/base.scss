@@ -22,15 +22,15 @@
 @import "component/dropdown";
 @import "component/chroma";
 
-body{
+body {
   font-family: var(--font-family);
   background: var(--background);
   color: var(--color);
 }
 
-*{
-  font-family: 'M PLUS Rounded 1c', sans-serif !important;
-  font-family: 'Noto Sans JP', sans-serif !important;
+* {
+  font-family: "M PLUS Rounded 1c", sans-serif !important;
+  font-family: "Noto Sans JP", sans-serif !important;
 }
 
 del {
@@ -39,25 +39,25 @@ del {
 
 summary {
   display: inline-block;
-	list-style-type: none !important;
+  list-style-type: none !important;
   position: relative;
   cursor: pointer;
   margin-top: 50px;
   margin-left: 20px !important;
 }
 summary::-webkit-details-marker {
-	display: none !important;
+  display: none !important;
 }
 summary:before {
   position: absolute;
   left: -20px;
-	content: "▶" !important;
+  content: "▶" !important;
 }
 details[open] summary:before,
 summary details[open] summary:before {
-	content: "▼" !important; 
+  content: "▼" !important;
 }
 
-details{
+details {
   margin-bottom: 50px;
 }

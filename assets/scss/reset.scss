@@ -1,7 +1,9 @@
 /* https://github.com/elad2412/the-new-css-reset v1.7.2 */
 /* custom styles for: pre, code */
 
-*:where(:not(html, iframe, canvas, img, svg, video, pre, code):not(svg *, symbol *)) {
+*:where(
+    :not(html, iframe, canvas, img, svg, video, pre, code):not(svg *, symbol *)
+  ) {
   all: unset;
   display: revert;
 }
@@ -12,11 +14,14 @@
   box-sizing: border-box;
 }
 
-a, button {
+a,
+button {
   cursor: revert;
 }
 
-ol, ul, menu {
+ol,
+ul,
+menu {
   list-style: none;
 }
 
@@ -28,7 +33,8 @@ table {
   border-collapse: collapse;
 }
 
-input, textarea {
+input,
+textarea {
   -webkit-user-select: auto;
 }
 
@@ -61,6 +67,7 @@ meter {
   -webkit-user-drag: element;
 }
 
-pre, code {
+pre,
+code {
   margin: 0;
 }

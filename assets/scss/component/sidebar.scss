@@ -2,14 +2,15 @@
   padding: 0 20px;
 }
 
-.sidebar-section, .sidebar-link {
+.sidebar-section,
+.sidebar-link {
   padding: 7px 0;
 }
 
 .sidebar-section {
   margin-top: 40px;
   font-weight: 600;
-  color: var(--color2)
+  color: var(--color2);
 }
 
 .sidebar-link {
@@ -20,7 +21,7 @@
 }
 
 .sidebar-link::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 6px;
   height: 6px;
@@ -43,6 +44,7 @@
   font-size: 98%;
 }
 
-.sidebar-link.current::before, .sidebar-link:hover::before {
+.sidebar-link.current::before,
+.sidebar-link:hover::before {
   background: var(--color-anchor);
 }

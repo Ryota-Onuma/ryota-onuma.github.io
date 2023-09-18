@@ -93,7 +93,7 @@
           cursor: pointer;
         }
       }
-      #lang-controll{
+      #lang-controll {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -137,7 +137,7 @@
       padding: 24px 0;
     }
 
-    #header-controls{
+    #header-controls {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -154,20 +154,20 @@
           border-bottom: 3px solid transparent;
           padding: 24px 12px;
           cursor: pointer;
-          &:hover{
+          &:hover {
             border-bottom: 3px solid var(--color2);
           }
         }
       }
-      #lang-controll{
+      #lang-controll {
         span {
           border-bottom: 3px solid transparent;
         }
-        .active{
+        .active {
           color: var(--color2);
           font-weight: bold;
         }
-        .separator{
+        .separator {
           display: inline-block;
           margin: 0 10px;
         }
@@ -176,7 +176,6 @@
   }
 
   #header-mobile {
-      display: none;
+    display: none;
   }
 }
-

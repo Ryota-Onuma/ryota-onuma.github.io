@@ -4,7 +4,7 @@
 }
 
 @media (min-width: 1025px) and (max-width: 1280px),
-(min-width: 1024px) and (max-width: 1280px) and (orientation: portrait) {
+  (min-width: 1024px) and (max-width: 1280px) and (orientation: portrait) {
   :root {
     --site-header-height: 60px;
     --site-footer-height: 60px;
