@@ -1,6 +1,4 @@
 #article {
-  width: 90%;
-  padding: 8px 16px;
   margin: 0 auto;
 }
 #article-side-space {
@@ -352,10 +350,21 @@
   }
 }
 
+
+
+@media (max-width: 1023px) {
+  #article {
+    width: 100vw;
+    padding: 8px 16px;
+    box-sizing: border-box;
+  }
+}
+
 @media (min-width: 1024px) {
   #article {
     padding: 24px;
     width: 60%;
+    box-sizing: border-box;
   }
   #article-side-space {
     display: block;
