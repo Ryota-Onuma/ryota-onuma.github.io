@@ -3,7 +3,7 @@ title: "Markdown cheat sheet for this blog"
 date: 2023-08-15T18:38:14+09:00
 draft: false
 tags: [Markdown]
-categories: [Programing]
+categories: [Programming]
 description: "This is my cheet sheet to write my blog."
 ---
 

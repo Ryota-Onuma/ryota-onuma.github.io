@@ -3,7 +3,7 @@ title: "マークダウン記法メモ"
 date: 2023-08-15T18:38:14+09:00
 draft: false
 tags: [Markdown]
-categories: [Programing]
+categories: [Programming]
 description: "本ブログで使える記法メモ"
 ---
 
