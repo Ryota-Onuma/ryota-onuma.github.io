@@ -165,7 +165,7 @@ import (
 
 func main() {
 	hoge := 1
-	fmt.Println(hoge)　// ここにbreak pointを設定する予定
+	fmt.Println(hoge)  //  ここにbreak pointを設定する予定
 	hoge = 2
 	fmt.Println(hoge)
 	fmt.Println("Hello World")
@@ -194,7 +194,7 @@ func TestRun(t *testing.T) {
 	hoge := struct {
 		fuga bool
 	}{
-		fuga: false, // ここにbreak pointを設定する予定
+		fuga: false,  //  ここにbreak pointを設定する予定
 	}
 
 	if !hoge.fuga {
