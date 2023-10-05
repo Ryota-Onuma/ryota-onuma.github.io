@@ -4,7 +4,7 @@ date: 2023-10-05T21:00:14+09:00
 draft: false
 tags: [go]
 categories: [Programming]
-description: 'Dev Container CLIと[delve](https://github.com/go-delve/delve)でGoコンテナをデバッグできるようにするやり方をまとめました。ローカル開発では複数コンテナと合わせてdocker composeを用いて開発することが多いかと思いますので、今回はdocker composeで動いているGoコンテナに対してdelveでデバッグできるようにするやり方を紹介したいと思います。'
+description: 'Dev Container CLIとdelveでGoコンテナをデバッグできるようにするやり方をまとめました。ローカル開発では複数コンテナと合わせてdocker composeを用いて開発することが多いかと思いますので、今回はdocker composeで動いているGoコンテナに対してdelveでデバッグできるようにするやり方を紹介したいと思います。'
 ---
 
 # はじめに
@@ -36,7 +36,7 @@ description: 'Dev Container CLIと[delve](https://github.com/go-delve/delve)でG
 │       └── post-start-command.sh
 ```
 
-また、今回の例では以下のような`docker-compose.yaml`が定義されているものとします。
+また、今回の例では以下のような`docker-compose.yml`が定義されているものとします。
 ```yaml{name="docker-compose.yml"}
 version: "3.8"
 services:
