@@ -14,9 +14,14 @@ description: 'Dev Container CLIとdelveでGoコンテナをデバッグできる
 
 
 
-# 今回説明しないこと
-- Dev Container CLIについて
-- delveについて
+# Dev Container CLIとは？
+
+Dev Container CLIとは[こちら](https://github.com/devcontainers/cli)にも書いてあるように、`devcontainer.json`から開発用のコンテナを立ち上げることができるツールです。既存のコンテナに対して追加でデバッグツールが入れることができるため、チーム管理をしているDockerコンテナのconfiguration fileを汚さずに自分好みの開発ツールを追加で入れることができます。
+
+# delveとは？
+
+delveはGoのプログラムをデバッグできるツールです。Goのデバッガーでググるとだいたい上のほうにでてきます。
+
 
 
 # やり方
@@ -141,9 +146,11 @@ upした後は、以下コマンドでコンテナ内部に入ります。
 $ devcontainer exec --workspace-folder . bash
 ```
 
-また、Devcontainer CLIはstopやdownを提供していないので、コンテナを止めたり削除したいときは明示的に`docker compose stop`や`docker compose down`してあげる必要があります。
+また、2023年10月時点ではDevcontainer CLIはstopやdownを提供していないので、コンテナを止めたり削除したいときは明示的に`docker compose stop`や`docker compose down`してあげる必要があります。（[将来的に対応する可能性はありそうです](https://github.com/devcontainers/cli#context)）
 
 ![使えるコマンド](/images/devcontainer-help.png "使えるコマンド")
+
+
 
 ### delveを動かしてみる
 
