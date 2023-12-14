@@ -25,5 +25,10 @@
         </div>
       {{ end }}
     </div>
+    {{ $thumbnail := .Params.thumbnail }}
+    {{ if or (eq $thumbnail "") (eq $thumbnail nil)}}
+        {{ $thumbnail = "/images/default.png" }}
+    {{ end }}
+    <img src="{{ $thumbnail }}" alt="サムネイル" id="article-thumbnail">
   </div>
 </header>

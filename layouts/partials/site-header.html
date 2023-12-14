@@ -1,36 +1,25 @@
 <header id="header-pc">
   <!-- brand -->
-  {{ $urlPrefix := "" }}
-  {{ if eq .Site.Language.Lang "en" }}
-    {{ $urlPrefix = "/en" }}
-  {{ end }}
+  {{ $urlPrefix := "" }} {{ if eq .Site.Language.Lang "en" }} {{ $urlPrefix = "/en" }} {{ end }}
 
   <div id="header-brand">
     <a href="{{ $urlPrefix }}/">{{ .Site.Title }}</a>
   </div>
-  
+
   <!-- controls -->
   <div id="header-controls">
     <div id="header-menu">
-      {{ $currentPageURL := .Permalink }}
-      {{ $isHomePage := eq $currentPageURL ($.Site.BaseURL | absLangURL) }}
-      {{ range .Site.Menus.main }}
-        {{ $isActive := or (and (eq .URL "/") $isHomePage) (and (ne .URL "/") (in $currentPageURL .URL)) }}
-        <a href="{{ $urlPrefix }}{{ .URL }}" {{ if $isActive }} class="active"{{ end }}><span>{{ .Name }}</span></a>
+      {{ $currentPageURL := .Permalink }} {{ $isHomePage := eq $currentPageURL ($.Site.BaseURL | absLangURL) }} {{ range .Site.Menus.main }} {{ $isActive := or (and (eq .URL "/") $isHomePage) (and (ne .URL "/") (in $currentPageURL .URL)) }}
+      <a href="{{ $urlPrefix }}{{ .URL }}" {{ if $isActive }} class="active" {{ end }}><span>{{ .Name }}</span></a>
       {{ end }}
     </div>
 
     <!-- language selector -->
     <div id="lang-controll">
-      {{ if .IsTranslated }}
-        {{ $allTranslation := .AllTranslations}}
-        {{ $currentLangName := .Site.Language.LanguageName }}
-        {{ range $index, $value := .AllTranslations }}
-          <span role="menuitem" {{ if eq $currentLangName $value.Language.LanguageName}}class="active"{{ end }}><a href="{{ .Permalink }}">{{ $value.Language.LanguageName }}</a></span>
-          {{ if not (eq (add $index 1) (len $allTranslation)) }}<span class="separator">|</span>{{ end }}
-        {{ end }}
-      {{ else }}
-          <span role="menuitem" class="active"><a href="#">{{ .Language.LanguageName }}</a></span>
+      {{ if .IsTranslated }} {{ $allTranslation := .AllTranslations}} {{ $currentLangName := .Site.Language.LanguageName }} {{ range $index, $value := .AllTranslations }}
+      <span role="menuitem" {{ if eq $currentLangName $value.Language.LanguageName}}class="active" {{ end }}><a href="{{ .Permalink }}">{{ $value.Language.LanguageName }}</a></span>
+      {{ if not (eq (add $index 1) (len $allTranslation)) }}<span class="separator">|</span>{{ end }} {{ end }} {{ else }}
+      <span role="menuitem" class="active"><a href="#">{{ .Language.LanguageName }}</a></span>
       {{ end }}
     </div>
     <!-- theme selector -->
@@ -40,9 +29,15 @@
         <i class="icon icon-select"></i>
       </button>
       <ul role="menu" class="dropdown-menu">
-        <li role="menuitem"><button class="color-scheme" data-value="light"><i class="icon icon-light-mode"></i> Light</button></li>
-        <li role="menuitem"><button class="color-scheme" data-value="dark"><i class="icon icon-dark-mode"></i> Dark &nbsp;</button></li>
-        <li role="menuitem"><button class="color-scheme" data-value="night"><i class="icon icon-night-mode"></i> Night</button></li>
+        <li role="menuitem">
+          <button class="color-scheme" data-value="light"><i class="icon icon-light-mode"></i> Light</button>
+        </li>
+        <li role="menuitem">
+          <button class="color-scheme" data-value="dark"><i class="icon icon-dark-mode"></i> Dark &nbsp;</button>
+        </li>
+        <li role="menuitem">
+          <button class="color-scheme" data-value="night"><i class="icon icon-night-mode"></i> Night</button>
+        </li>
       </ul>
     </div>
   </div>
@@ -58,21 +53,15 @@
     </label>
     <div id="header-modal">
       <div id="header-menu">
-        {{ $currentPageURL := .Permalink }}
-        {{ $isHomePage := eq $currentPageURL ($.Site.BaseURL | absLangURL) }}
-        {{ range .Site.Menus.main }}
-          <a href="{{ $urlPrefix }}{{ .URL }}">{{ .Name }}</a>
+        {{ $currentPageURL := .Permalink }} {{ $isHomePage := eq $currentPageURL ($.Site.BaseURL | absLangURL) }} {{ range .Site.Menus.main }}
+        <a href="{{ $urlPrefix }}{{ .URL }}">{{ .Name }}</a>
         {{ end }}
       </div>
       <div id="lang-controll">
-        {{ if .IsTranslated }}
-          {{ $allTranslation := .AllTranslations}}
-          {{ range $index, $value := .AllTranslations }}
-            <span role="menuitem"><a href="{{ .Permalink }}">{{ $value.Language.LanguageName }}</a></span>
-            {{ if not (eq (add $index 1) (len $allTranslation)) }}<span>|</span>{{ end }}
-          {{ end }}
-        {{ else }}
-            <span role="menuitem" class="{{ if eq .Site.Language.Lang .Language.LanguageName}}active{{ end }}"><a href="#">{{ .Language.LanguageName }}</a></span>
+        {{ if .IsTranslated }} {{ $allTranslation := .AllTranslations}} {{ range $index, $value := .AllTranslations }}
+        <span role="menuitem"><a href="{{ .Permalink }}">{{ $value.Language.LanguageName }}</a></span>
+        {{ if not (eq (add $index 1) (len $allTranslation)) }}<span>|</span>{{ end }} {{ end }} {{ else }}
+        <span role="menuitem" class="{{ if eq .Site.Language.Lang .Language.LanguageName}}active{{ end }}"><a href="#">{{ .Language.LanguageName }}</a></span>
         {{ end }}
       </div>
       <div id="theme-container">

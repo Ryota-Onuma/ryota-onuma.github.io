@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 100px;
+  gap: 30px;
 
   #about-me-page-title {
     font-size: 2rem;
@@ -19,23 +21,23 @@
     border: 1px solid var(--color2);
   }
 
-
   #about-me-content {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 30px;
 
     @media (min-width: 1023px) {
       width: 65%;
       padding: 0 10px;
       box-sizing: border-box;
     }
-    #about-me-intro{
-        font-size: 1rem;
-        margin: 40px 0;
+    #about-me-intro {
+      font-size: 1rem;
+      margin: 40px 0;
     }
-    
+
     .about-me-component {
       width: 100%;
       .about-me-title {
@@ -59,7 +61,56 @@
         li {
           margin: 10px 0;
           list-style: circle;
-          word-break:break-all;
+          word-break: break-all;
+        }
+      }
+
+      .experience-chart {
+        list-style: none;
+        padding: 0px 0px 0px 6px;
+        margin-top: 20px;
+        li {
+          padding-left: 30px;
+          border-left: 2px solid #6f6f6f;
+          padding-bottom: 30px;
+          position: relative;
+          list-style: none;
+          &:last-child {
+            padding-bottom: 0;
+          }
+          &:after {
+            position: absolute;
+            top: 0px;
+            left: -10.5px;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #4d4d4d;
+            background: #fff;
+            content: '';
+            transition: all 0.7s;
+          }
+          &:hover {
+            &:after {
+              background: var(--color2);
+            }
+            color: var(--color2);
+          }
+        }
+        h4 {
+          font-size: 19px;
+          padding: 0;
+        }
+        .period {
+          font-weight: bold;
+          margin: 20px 0;
+        }
+        .detail {
+          margin-top: 5px;
+          .detail-content {
+            word-break: break-all;
+          }
         }
       }
     }

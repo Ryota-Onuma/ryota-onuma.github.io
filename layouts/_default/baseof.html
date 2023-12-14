@@ -1,12 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ .Site.LanguageCode | default `ja` }}">
   <head>
     {{ partial "head" . }}
   </head>
   <body>
-    {{ partial "site-header" . }}
-    {{ block "main" . }}{{ end }}
-    {{ partial "site-footer" . }}
-    {{ partial "scripts" . }}
+    {{ partial "site-header" . }} {{ block "main" . }}{{ end }} {{ partial "site-footer" . }} {{ partial "scripts" . }}
   </body>
 </html>

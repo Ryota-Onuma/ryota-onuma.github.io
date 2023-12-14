@@ -7,30 +7,11 @@
             </h1>
             <div id="articles-content">
                 <div id="article-card-container">
-                    {{ $urlPrefix := "" }}
-                    {{ if eq .Site.Language.Lang "en" }}
-                        {{ $urlPrefix = "/en" }}
-                    {{ end }}
                     {{ range .Pages }}
-                        <div class="article-card">
-                            <h1 class="article-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-                            <div class="article-metadata-container">
-                                <div class="article-posted-at">
-                                    <i class="icon icon-calendar"></i><span>{{.Date.Format "2006 01/02" }}</span>
-                                </div>
-                                <div class="article-tags-container">
-                                    {{ range .Params.tags }}
-                                        <a href="{{ $urlPrefix }}{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag">#{{ . | urlize}}</a>
-                                    {{ end }}
-                                </div>
-                            </div>
-                            <p class="article-description">{{ .Params.description | truncate 90}}</p>
-                            <div class="article-read-more-container">
-                                <a href="{{ .Permalink }}" class="article-read-more">Read More »</a>
-                            </div>
-                        </div>
+                        {{ partial "articles/card" . }}
                     {{ end }}
                 </div>
+
                 <div id="articles-taxonomy-container">
                     {{ $urlPrefix := "" }}
                     {{ if eq .Site.Language.Lang "en" }}

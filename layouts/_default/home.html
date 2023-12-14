@@ -1,9 +1,72 @@
 {{ define "main" }}
 <div id="site-main-content-wrapper">
-  <main>
-    <section class="cover">
-      <h2>{{ i18n "greeting" }}</h2>
-    </section>
-  </main>
+  <div id="about-me">
+    <img src="/images/ryota.png" alt="profile" id="about-me-profile-image" />
+    <div id="about-me-content">
+      <div class="about-me-component">
+        <h1 class="about-me-title">About Me</h1>
+        <p id="about-me-intro">{{ i18n "greeting" }}</p>
+      </div>
+      <div class="about-me-component">
+        <h1 class="about-me-title">History</h1>
+        <ul class="experience-chart">
+          <li>
+            <div class="single-experience">
+              <h4>{{ i18n "histories.bst.title"}}</h4>
+              <span class="period">{{ i18n "histories.bst.period" }}</span>
+              <div class="detail">
+                <p class="detail-content">{{ i18n "histories.bst.detail" | safeHTML }}</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="single-experience">
+              <h4>{{ i18n "histories.ynu.title"}}</h4>
+              <span class="period">{{ i18n "histories.ynu.period" }}</span>
+              <div class="detail">
+                <p class="detail-content">{{ i18n "histories.ynu.detail" | safeHTML }}</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="single-experience">
+              <h4>{{ i18n "histories.bst-intern.title"}}</h4>
+              <span class="period">{{ i18n "histories.bst-intern.period" }}</span>
+              <div class="detail">
+                <p class="detail-content">{{ i18n "histories.bst-intern.detail" | safeHTML }}</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="single-experience">
+              <h4>{{ i18n "histories.ynu-enroll.title"}}</h4>
+              <span class="period">{{ i18n "histories.ynu-enroll.period" }}</span>
+              <div class="detail">
+                <p class="detail-content">{{ i18n "histories.ynu-enroll.detail" | safeHTML }}</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="about-me-component">
+        <h1 class="about-me-title">Quolifications</h1>
+        <ul>
+          <li>基本情報技術者試験 (2023/8)</li>
+          <li>Versant 52 点 (2023/7)</li>
+          <li>Google Cloud Certified Professional Cloud Developer (2023/7)</li>
+          <li>AWS Certified Solutions Architect - Associate (2022/4)</li>
+        </ul>
+      </div>
+      <div class="about-me-component">
+        <h1 class="about-me-title">SNS</h1>
+        <div class="about-me-sns">
+          <ul>
+            <li><a href="https://github.com/Ryota-Onuma">GitHub</a></li>
+            <li><a href="https://twitter.com/oryataoryata">X</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 {{ end }}

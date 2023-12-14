@@ -5,7 +5,7 @@
     other = "Articles"
 
 [greeting] 
-    other = "Hello"
+    other = "I'm a software engineer."
 
 [categories_title]
     other = "Categories"
@@ -13,6 +13,33 @@
 [tags_title]
     other = "Tags"
 
+[histories]
+    [histories.bst]
+        [histories.bst.title]
+            other = "BuySell Technologies Co., Ltd. (Full-time Employee)"
+        [histories.bst.period]
+            other = "2021.4 - now"
+        [histories.bst.detail]
+             other = "<p>Working as a backend engineer.</p><br /><p>Go / Hasura / Elasticsearch / Next.js / GraphQL / Google Cloud (2021.12 - now)</p>Vue.js / Ruby on Rails / AWS (2021.4 - 2021.12)"
+    [histories.ynu]
+        [histories.ynu.title]
+            other = "Graduated from Yokohama National University, Faculty of Economics"
+        [histories.ynu.period]
+            other = "2021.3"
+        [histories.ynu.detail]
+            other = ""
+    [histories.bst-intern]
+        [histories.bst-intern.title]
+            other = "BuySell Technologies Co., Ltd. (Intern)"
+        [histories.bst-intern.period]
+            other = "2020.6 - 2021.3"
+        [histories.bst-intern.detail]
+            other = "<br />Vue.js / Ruby on Rails"
+        [histories.ynu-enroll]
+        [histories.ynu-enroll.title]
+            other = "Enrolled in Yokohama National University, Faculty of Economics"
+        [histories.ynu-enroll.period]
+            other = "2017.4"
+        [histories.ynu-enroll.detail]
+            other = ""
 
-[about_me_greeting]
-    other = "I'm a software engineer."

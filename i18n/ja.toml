@@ -5,7 +5,7 @@
     other = "記事一覧"
 
 [greeting] 
-    other = "ようこそ"
+    other = "ソフトウェアエンジニアとして仕事しています。"
 
 [categories_title]
     other = "カテゴリー"
@@ -13,5 +13,32 @@
 [tags_title]
     other = "タグ"
 
-[about_me_greeting]
-    other = "ソフトウェアエンジニアとして仕事しています。"
+[histories]
+    [histories.bst]
+        [histories.bst.title]
+            other = "株式会社 BuySell Technologies"
+        [histories.bst.period]
+            other = "2021.4 - now"
+        [histories.bst.detail]
+             other = "<br /><p>バックエンドを中心に開発。たまにフロントエンドもやる。</p><br /><p>Go / Hasura / Elasticsearch / Next.js / GraphQL / Google Cloud (2021.12 - now)</p>Vue.js / Ruby on Rails / AWS (2021.4 - 2021.12)"
+    [histories.ynu]
+        [histories.ynu.title]
+            other = "横浜国立大学 経済学部 経済学科 卒業"
+        [histories.ynu.period]
+            other = "2021.3"
+        [histories.ynu.detail]
+            other = ""
+    [histories.bst-intern]
+        [histories.bst-intern.title]
+            other = "株式会社 BuySell Technologies (インターン)"
+        [histories.bst-intern.period]
+            other = "2020.6 - 2021.3"
+        [histories.bst-intern.detail]
+            other = "<br />Vue.js / Ruby on Rails"
+    [histories.ynu-enroll]
+        [histories.ynu-enroll.title]
+            other = "横浜国立大学 経済学部 経済学科 入学"
+        [histories.ynu-enroll.period]
+            other = "2017.4"
+        [histories.ynu-enroll.detail]
+            other = ""

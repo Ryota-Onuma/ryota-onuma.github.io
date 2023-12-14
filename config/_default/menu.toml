@@ -5,13 +5,7 @@ url = '/'
 weight = 1
 
 [[main]]
-identifier = 'about'
-name = 'About'
-url = '/about/'
-weight = 2
-
-[[main]]
 identifier = 'articles'
 name = 'Articles'
 url = '/articles/'
-weight = 3
+weight = 2

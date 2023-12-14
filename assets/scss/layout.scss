@@ -22,6 +22,7 @@ body {
 
 #site-main-content-wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   width: 100%;
   min-height: calc(100vh - 120px); // headerの高さ分だけ下にずらす

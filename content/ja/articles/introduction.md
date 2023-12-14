@@ -4,6 +4,7 @@ date: 2023-09-19T18:38:14+09:00
 draft: false
 tags: [diary,release-note]
 categories: [Release Note]
+isExternal: false
 description: "記念すべき最初の記事"
 ---
 
