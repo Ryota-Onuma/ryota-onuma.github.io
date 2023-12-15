@@ -5,7 +5,7 @@
     other = "Articles"
 
 [greeting] 
-    other = "I'm a software engineer."
+    other = "<p>I'm a software engineer.<p/><p>I like to listen to game music.<p/>"
 
 [categories_title]
     other = "Categories"
