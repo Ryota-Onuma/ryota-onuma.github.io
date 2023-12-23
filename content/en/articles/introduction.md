@@ -2,7 +2,7 @@
 title: "Introduction to my blog"
 date: 2023-09-19T18:38:14+09:00
 draft: false
-tags: [diary,release-note]
+tags: [diary,Release Note]
 categories: [Release Note]
 description: "This is my first post."
 ---

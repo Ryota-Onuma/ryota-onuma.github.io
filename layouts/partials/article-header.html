@@ -20,7 +20,7 @@
         {{ end }}
         <div id="article-tags">
           {{ range .Params.tags }}
-            <a href="{{ $urlPrefix }}{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag">#{{ . | urlize}}</a>
+            <a href="{{ $urlPrefix }}{{ "/tags/" | relURL }}{{ (replace ( (lower .) | urlize ) " " "-") }}" class="tag">#{{ . }}</a>
           {{ end }}
         </div>
       {{ end }}

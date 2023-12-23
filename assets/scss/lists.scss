@@ -1,0 +1,35 @@
+#lists {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #lists-page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color2);
+    margin: 50px auto;
+    text-align: center;
+  }
+  #lists-content {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    .tag {
+      width: fit-content;
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--color);
+    }
+    .category {
+      width: fit-content;
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--color);
+    }
+  }
+}

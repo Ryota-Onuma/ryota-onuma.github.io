@@ -16,40 +16,59 @@
     flex-direction: column;
     align-items: center;
     gap: 50px;
+    position: relative;
+    @media (min-width: 1023px) {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
 
     #article-card-container {
       width: 100%;
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       gap: 50px;
-      @media (min-width: 768px) and (max-width: 1023px){
-        grid-template-columns: repeat(2, 1fr); 
+      @media (min-width: 768px) and (max-width: 1023px) {
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
       }
       @media (min-width: 1023px) {
-        grid-template-columns: repeat(3, 1fr); 
+        width: 80%;
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-      } 
+      }
     }
 
     #articles-taxonomy-container {
       width: 80%;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
+      justify-content: flex-start;
       gap: 36px;
       margin-bottom: 20px;
+      @media (min-width: 768px) and (max-width: 1023px) {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
       @media (min-width: 1023px) {
-        width: 25%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 20%;
         padding: 0 10px;
         box-sizing: border-box;
+        flex-direction: column;
       }
       .articles-taxonomy-title {
         width: 100%;
         font-size: 1.4rem;
         font-weight: bold;
         color: var(--color2);
-        text-align: center;
+        text-align: left;
         margin: 10px 0;
       }
 
@@ -65,8 +84,7 @@
         .articles-tags {
           width: 100%;
           display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
+          flex-direction: column;
           justify-content: center;
           gap: 12px;
           .tag {
@@ -74,9 +92,9 @@
           }
         }
         .articles-categories {
+          width: 100%;
           display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
+          flex-direction: column;
           justify-content: center;
           gap: 12px;
           .category {

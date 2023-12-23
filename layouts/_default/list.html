@@ -1,68 +1,60 @@
 {{ define "main" }}
+{{ $urlPrefix := "" }}
+{{ if eq .Site.Language.Lang "en" }}
+    {{ $urlPrefix = "/en" }}
+{{ end }}
 <div id="site-main-content-wrapper">
     <main>
-        <div id="articles">
-            <h1 id="articles-page-title">
-                <!-- パスに/categoriesが含まれているか-->
-                {{ if in .Permalink "/categories" }}
-                    {{ .Title }}
-                <!-- パスに/tagsが含まれているか-->
-                {{ else if in .Permalink "/tags" }}
-                    #{{ .Title }}
-                {{ end }}
-            </h1>
-            <div id="articles-content">
-                <div id="article-card-container">
-                    {{ $urlPrefix := "" }}
-                    {{ if eq .Site.Language.Lang "en" }}
-                        {{ $urlPrefix = "/en" }}
-                    {{ end }}
-                    {{ range .Pages }}
-                        <div class="article-card">
-                            <h1 class="article-title"> <a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-                            <div class="article-metadata-container">
-                                <div class="article-posted-at">
-                                    <i class="icon icon-calendar"></i><span>{{.Date.Format "2006 01/02" }}</span>
-                                </div>
-                                <div class="article-tags-container">
-                                    {{ range .Params.tags }}
-                                        <a href="{{ $urlPrefix }}{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag">#{{ . | urlize}}</a>
-                                    {{ end }}
-                                </div>
-                            </div>
-                            <p class="article-description">{{ .Params.description | truncate 90}}</p>
-                            <div class="article-read-more-container">
-                                <a href="{{ .Permalink }}" class="article-read-more">Read More »</a>
-                            </div>
-                        </div>
-                    {{ end }}
+        {{ if or (eq .Page.RelPermalink  (printf "%s/categories/" $urlPrefix ))}}
+            <div id="lists">
+                <h1 id="lists-page-title">
+                    {{ i18n "categories_title" }}
+                </h1>
+                <div id="lists-content">
+                    {{- $categories := partial "functions/all_categories" .Site.Pages }}
+                    {{- range $category, $count := $categories }}
+                        <span class="category"><a href="{{ $urlPrefix }}{{ "/categories/" | relURL }}{{ $category | urlize }}">{{ $category }} ({{ $count }})</a></span>
+                    {{- end }}
                 </div>
-                <div id="articles-taxonomy-container">
-                    {{ $urlPrefix := "" }}
-                    {{ if eq .Site.Language.Lang "en" }}
-                        {{ $urlPrefix = "/en" }}
+            </div>
+        {{ else if or (eq .Page.RelPermalink (printf "%s/tags/" $urlPrefix ))}}
+            <div id="lists">
+                <h1 id="lists-page-title">
+                    {{ i18n "tags_title" }}
+                </h1>
+                <div id="lists-content">
+                    {{- $tags := partial "functions/all_tags" .Site.Pages }}
+                    {{- range $tag, $count := $tags }}
+                        <a href="{{ $urlPrefix }}{{ "/tags/" | relURL }}{{ (replace ( (lower $tag) | urlize ) " " "-") }}" class="tag">#{{ $tag }} ({{ $count }})</a>
+                    {{- end }}
+                </div>
+            </div>
+            
+        {{ else }}
+            <div id="articles">
+                <h1 id="articles-page-title">
+                    <!-- パスに/categoriesが含まれているか-->
+                    {{ if in .Permalink "/categories" }}
+                        {{ .Title }}
+                    <!-- パスに/tagsが含まれているか-->
+                    {{ else if in .Permalink "/tags" }}
+                        #{{ .Title }}
                     {{ end }}
-                    <div id="articles-taxonomy-inner">
-                        <h2 class="articles-taxonomy-title">{{ i18n "categories_title" }}</h2>
-                        <div class="articles-categories">
-                            {{- $categories := partial "functions/all_categories" .Site.Pages }}
-                            {{- range $category, $count := $categories }}
-                                <span class="category"><a href="{{ $urlPrefix }}{{ "/categories/" | relURL }}{{ $category | urlize }}">{{ $category | urlize}} ({{ $count }})</a></span>
-                            {{- end }}
-                        </div>
+                </h1>
+            
+                <div id="articles-content">
+                    <div id="article-card-container">
+                        {{ range .Pages }}
+                            {{ partial "articles/card" . }}
+                        {{ end }}
                     </div>
-                    <div id="articles-taxonomy-inner">
-                        <h2 class="articles-taxonomy-title">{{ i18n "tags_title" }}</h2>
-                        <div class="articles-tags">
-                            {{- $tags := partial "functions/all_tags" .Site.Pages }}
-                            {{- range $tag, $count := $tags }}
-                                <span class="tag">#<a href="{{ $urlPrefix }}{{ "/tags/" | relURL }}{{ $tag | urlize }}">{{ $tag | urlize}} ({{ $count }})</a></span>
-                            {{- end }}
-                        </div>
+
+                    <div id="articles-taxonomy-container">
+                        {{ partial "articles/taxonomy" . }}
                     </div>
                 </div>
             </div>
-        </div>
+        {{ end }}
     </main>
 </div>
 {{ end }}

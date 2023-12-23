@@ -1,0 +1,22 @@
+{{ $urlPrefix := "" }}
+{{ if eq .Site.Language.Lang "en" }}
+    {{ $urlPrefix = "/en" }}
+{{ end }}
+<div id="articles-taxonomy-inner">
+    <h2 class="articles-taxonomy-title"><a href="{{ $urlPrefix }}/categories/">{{ i18n "categories_title" }}</a></h2>
+    <div class="articles-categories">
+        {{- $categories := partial "functions/all_categories" .Site.Pages }}
+        {{- range $category, $count := $categories }}
+            <span class="category"><a href="{{ $urlPrefix }}{{ "/categories/" | relURL }}{{ $category | urlize }}">{{ $category }} ({{ $count }})</a></span>
+        {{- end }}
+    </div>
+</div>
+<div id="articles-taxonomy-inner">
+    <h2 class="articles-taxonomy-title"><a href="{{ $urlPrefix }}/tags/">{{ i18n "tags_title" }}</a></h2>
+    <div class="articles-tags">
+        {{- $tags := partial "functions/all_tags" .Site.Pages }}
+        {{- range $tag, $count := $tags }}
+            <span class="tag"><a href="{{ $urlPrefix }}{{ "/tags/" | relURL }}{{ (replace ( (lower $tag) | urlize ) " " "-") }}">#{{ $tag }} ({{ $count }})</a></span>
+        {{- end }}
+    </div>
+</div>

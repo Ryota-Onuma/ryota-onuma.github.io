@@ -1,43 +1,13 @@
 {{ define "main" }}
 <div id="site-main-content-wrapper">
-    <main>
-        <div id="articles">
-            <h1 id="articles-page-title">
-                {{ i18n "articles_title" }}
-            </h1>
-            <div id="articles-content">
-                <div id="article-card-container">
-                    {{ range .Pages }}
-                        {{ partial "articles/card" . }}
-                    {{ end }}
-                </div>
-
-                <div id="articles-taxonomy-container">
-                    {{ $urlPrefix := "" }}
-                    {{ if eq .Site.Language.Lang "en" }}
-                        {{ $urlPrefix = "/en" }}
-                    {{ end }}
-                    <div id="articles-taxonomy-inner">
-                        <h2 class="articles-taxonomy-title">{{ i18n "categories_title" }}</h2>
-                        <div class="articles-categories">
-                            {{- $categories := partial "functions/all_categories" .Site.Pages }}
-                            {{- range $category, $count := $categories }}
-                                <span class="category"><a href="{{ $urlPrefix }}{{ "/categories/" | relURL }}{{ $category | urlize }}">{{ $category | urlize}} ({{ $count }})</a></span>
-                            {{- end }}
-                        </div>
-                    </div>
-                    <div id="articles-taxonomy-inner">
-                        <h2 class="articles-taxonomy-title">{{ i18n "tags_title" }}</h2>
-                        <div class="articles-tags">
-                            {{- $tags := partial "functions/all_tags" .Site.Pages }}
-                            {{- range $tag, $count := $tags }}
-                                <span class="tag">#<a href="{{ $urlPrefix }}{{ "/tags/" | relURL }}{{ $tag | urlize }}">{{ $tag | urlize}} ({{ $count }})</a></span>
-                            {{- end }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+  <main>
+    <div id="articles">
+      <h1 id="articles-page-title">{{ i18n "articles_title" }}</h1>
+      <div id="articles-content">
+        <div id="article-card-container">{{ range .Pages }} {{ partial "articles/card" . }} {{ end }}</div>
+        <div id="articles-taxonomy-container">{{ partial "articles/taxonomy" . }}</div>
+      </div>
+    </div>
+  </main>
 </div>
 {{ end }}
