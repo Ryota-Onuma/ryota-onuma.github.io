@@ -13,7 +13,7 @@ katex: true
 
 As the subject says, I added [KaTex](https://katex.org/) system in my blog to show math formula.
 
-According to [KaTex](https://katex.org/) and some articles on the Internet, it is a lirary based on Tex that enables your website to render fast without any dependency. 
+According to [KaTex](https://katex.org/) and some articles on the Internet, it is a library based on Tex that enables your website to render fast without any dependency. 
 
 
 
